@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Converging Perspectives on Health AI · AIES 2026 Workshop · Malmö</title>
+<meta name="description" content="A workshop at AAAI/ACM AIES 2026 bridging technical, clinical, social, and ethical research on health AI. Malmö, Sweden — 15 October 2026." />
+<style>
+  :root{
+    --bg:#0f1b2d; --panel:#ffffff; --ink:#16202e; --muted:#5c6b7a;
+    --accent:#1f7a8c; --accent-dk:#155e6b; --line:#e2e8ee; --warn:#b4541b;
+    --ok:#1f7a3a; --soft:#f3f7fa;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--soft);line-height:1.6}
+  a{color:var(--accent-dk)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(15,27,45,.95);backdrop-filter:blur(6px);color:#fff}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .brand{font-weight:800;font-size:.95rem;letter-spacing:.01em}
+  nav .links{display:flex;gap:18px;flex-wrap:wrap}
+  nav a{color:#dbe6ec;text-decoration:none;font-size:.88rem}
+  nav a:hover{color:#fff}
+  nav a.cta{background:var(--accent);color:#fff;padding:7px 14px;border-radius:8px;font-weight:700}
+  nav a.cta:hover{background:#2a93a8}
+  @media(max-width:680px){nav .links a:not(.cta){display:none}}
+
+  /* hero */
+  header.hero{background:radial-gradient(1200px 400px at 20% -10%,#2a93a8 0,#0f1b2d 60%);color:#fff;padding:64px 0 56px}
+  .kicker{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#9fd2dd;font-weight:700}
+  header.hero h1{font-size:2.1rem;line-height:1.2;margin:10px 0 8px;max-width:18ch}
+  header.hero .tag{font-size:1.05rem;color:#d6e4ea;max-width:60ch;margin:0 0 22px}
+  .qbox{border-left:3px solid var(--accent);padding:8px 0 8px 16px;margin:0 0 26px;font-size:1.05rem;color:#eef6f8;max-width:62ch}
+  .herometa{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 13px;font-size:.85rem}
+  .herobtns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{appearance:none;border:0;border-radius:10px;padding:13px 24px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn-primary{background:#fff;color:var(--accent-dk)}
+  .btn-primary:hover{background:#eaf4f6}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+  .btn-outline:hover{border-color:#fff}
+
+  /* sections */
+  section{padding:52px 0}
+  section:nth-of-type(even){background:#fff}
+  h2{font-size:1.5rem;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 22px;max-width:66ch}
+  p{max-width:72ch}
+
+  /* dates */
+  .dates{width:100%;border-collapse:collapse;max-width:560px}
+  .dates td{padding:11px 8px;border-bottom:1px solid var(--line)}
+  .dates td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+  .dates tr.hot td{color:var(--warn)}
+
+  /* topic grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 22px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .topic{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-size:.93rem}
+  section:nth-of-type(even) .topic{background:#f7fafc}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+  section:nth-of-type(even) .card{background:var(--soft)}
+  .card h3{margin:0 0 4px;font-size:1rem}
+  .card .role{color:var(--muted);font-size:.85rem}
+
+  /* schedule */
+  .sched{border-collapse:collapse;width:100%;max-width:640px}
+  .sched td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .sched td.time{white-space:nowrap;font-weight:700;color:var(--accent-dk);width:120px}
+
+  /* guideline note */
+  .note{background:#fff7ef;border:1px solid #f0d9c2;border-radius:10px;padding:13px 16px;font-size:.9rem;color:var(--warn);max-width:72ch;margin-top:18px}
+  ul.tight{margin:8px 0;padding-left:20px}
+  ul.tight li{margin:6px 0}
+  .req{color:var(--warn)}
+
+  /* form */
+  .formcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:24px;box-shadow:0 1px 2px rgba(16,32,46,.04)}
+  section:nth-of-type(even) .formcard{background:var(--soft)}
+  .step{font-size:.82rem;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 5px}
+  input[type=text],input[type=email],textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;font:inherit;color:var(--ink);background:#fff}
+  textarea{resize:vertical;min-height:90px}
+  .hint{font-weight:400;color:var(--muted);font-size:.82rem;margin:3px 0 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  .topics{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin-top:6px}
+  @media(max-width:560px){.topics{grid-template-columns:1fr}}
+  .topics label{display:flex;gap:8px;font-weight:400;font-size:.88rem;margin:4px 0;align-items:flex-start}
+  .topics input{margin-top:3px}
+  .checkbox-row{display:flex;gap:9px;align-items:flex-start;margin-top:12px}
+  .checkbox-row label{font-weight:400;margin:0;font-size:.9rem}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+  .btn-form{background:var(--accent);color:#fff}
+  .btn-form:hover{background:var(--accent-dk)}
+  .btn-ghost{background:#eef3f6;color:var(--accent-dk)}
+  .btn-ghost:hover{background:#e2ebf0}
+  .status{font-size:.88rem;margin-top:12px;min-height:1.2em}
+  .status.ok{color:var(--ok)}
+  .status.err{color:var(--warn)}
+  .easychair-box{background:var(--soft);border:1px dashed var(--accent);border-radius:12px;padding:16px 18px;margin-top:16px}
+  section:nth-of-type(even) .easychair-box{background:#fff}
+  .easychair-box code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font-size:.85rem}
+  section:nth-of-type(even) .easychair-box code{background:var(--soft)}
+
+  footer{background:#0f1b2d;color:#aebcc9;padding:34px 0;font-size:.88rem}
+  footer a{color:#cfe0e8}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">CPHAI&nbsp;2026</span>
+    <span class="links">
+      <a href="#about">About</a>
+      <a href="#topics">Topics</a>
+      <a href="#dates">Dates</a>
+      <a href="#submit">Submission</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#organizers">Organizers</a>
+      <a class="cta" href="#submit">Submit a paper</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img src="logo.png" alt="CPHAI 2026 logo" style="height:100px;margin:0 0 14px"/>
+    <div class="kicker">A workshop at AAAI / ACM AIES 2026 · Malmö, Sweden</div>
+    <h1>Converging Perspectives on Health AI</h1>
+    <p class="tag">Bridging Technical, Clinical, Social, and Ethical Research</p>
+    <div class="qbox">How can we develop AI solutions that are technically robust, clinically useful,
+      socially acceptable, and responsibly deployed?</div>
+    <div class="herometa">
+      <span class="chip">📅 15 October 2026</span>
+      <span class="chip">📍 Malmö, Sweden</span>
+      <span class="chip">📝 Submissions due 31 July 2026</span>
+      <span class="chip">📄 ≤ 4 pages, AAAI 2-column</span>
+    </div>
+    <div class="herobtns">
+      <a class="btn btn-primary" href="#submit">Submit your paper →</a>
+      <a class="btn btn-outline" href="#about">Read the call</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2>About the workshop</h2>
+    <p>Over the last decade, Artificial intelligence (AI) systems have been increasingly deployed in the
+      healthcare domain and have become commonplace within conversations around health. We define health
+      as topics related to the well being of people, their communities, and the world surrounding them.
+      As AI systems quickly reshape the health sector, meaningful impact requires more than good
+      performance. This has led to a growth in research pertaining to, among others, explainable and
+      trustworthy AI. Nevertheless, many existing AI systems still fail to translate into clinical
+      workflows and other real-world use cases, often because the legal, ethical and epistemic challenges
+      have not been integrated in the development and deployment.</p>
+    <p>Furthermore, AIES provides a groundwork for sharing research related to computer and social
+      sciences, law and policy, ethics, and philosophy. Within each of these domains, AI systems for
+      health are developed and evaluated amongst different definitions of accountability, ethics,
+      trustworthiness, safety, and alignment. This results in each domain being siloed from others, and a
+      lack of convergence within the health AI space, which is most essential for the development and
+      evaluation of real world AI systems.</p>
+    <p>To this end, the <strong>Converging Perspectives on Health AI Workshop</strong> aims to provide a
+      space for community building centered around the question: How can we develop AI solutions that are
+      technically robust, clinically useful, socially acceptable, and responsibly deployed? Or simply put,
+      how should we be using AI in real-world health scenarios? In doing so, we hope to discuss
+      multidisciplinary work that is: grounded in real world data or use cases, focuses on shared
+      challenges across domains, and builds common ground between technical and social perspectives.</p>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="wrap">
+    <h2>Themes of Interest</h2>
+    <p class="lead">Illustrative, not exhaustive.</p>
+    <div class="grid">
+      <div class="topic">Defining and measuring trust across domains in clinical AI systems</div>
+      <div class="topic">Evaluation frameworks beyond accuracy (e.g., safety, usability, outcomes)</div>
+      <div class="topic">Translational gaps between research and healthcare settings</div>
+      <div class="topic">Clinician-centered design and human-AI interaction</div>
+      <div class="topic">Communication of uncertainty and system limitations</div>
+      <div class="topic">Organizational and social barriers to adoption</div>
+      <div class="topic">Cross-domain lessons from other high-stakes fields</div>
+      <div class="topic">Participatory or community-informed approaches to AI development in healthcare</div>
+      <div class="topic">Data and AI Governance issues in the development and deployment of clinical AI systems</div>
+      <div class="topic">Regulatory and governance frameworks for clinical AI (e.g., GDPR, EU AI Act, EHDS, MDR)</div>
+      <div class="topic">Accountability, liability, and human oversight in clinical decision-making</div>
+      <div class="topic">Equity, access, and the societal impacts of deploying AI in healthcare</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLE PAPERS -->
+<section id="reading">
+  <div class="wrap">
+    <h2>Example papers</h2>
+    <p class="lead">Below is a list of published papers identified by the workshop organizers that fit
+      within the workshop scope. We share these to serve as inspiration for your own submissions:</p>
+    <ul class="tight">
+      <li>Blandford, A., Gibbs, J., Newhouse, N., Perski, O., Singh, A., &amp; Murray, E. (2018). Seven
+        lessons for interdisciplinary research on interactive digital health interventions. Digital health,
+        4, 2055207618770325.
+        <a href="https://journals.sagepub.com/doi/pdf/10.1177/2055207618770325" target="_blank" rel="noopener">Link</a></li>
+      <li>Seger, E., Ovadya, A., Siddarth, D., Garfinkel, B., &amp; Dafoe, A. (2023, August). Democratising
+        AI: Multiple meanings, goals, and methods. In Proceedings of the 2023 AAAI/ACM Conference on AI,
+        Ethics, and Society (pp. 715-722).
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3600211.3604693" target="_blank" rel="noopener">Link</a></li>
+      <li>Zając, H. D., Avlona, N. R., Kensing, F., Andersen, T. O., &amp; Shklovski, I. (2023, August).
+        Ground truth or dare: Factors affecting the creation of medical datasets for training AI. In
+        Proceedings of the 2023 AAAI/ACM Conference on AI, Ethics, and Society (pp. 351-362).
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3600211.3604766" target="_blank" rel="noopener">Link</a></li>
+      <li>Ganju, K. K., Atasoy, H., McCullough, J., &amp; Greenwood, B. (2020). The role of decision support
+        systems in attenuating racial biases in healthcare delivery. Management science, 66(11), 5171-5181.
+        <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.2020.3698" target="_blank" rel="noopener">Link</a></li>
+      <li>Seixas, A. A., &amp; Chung, D. P. (2026). Reintegrating the Human in Health: A Triadic Blueprint
+        for Whole-Person Care in the Age of AI. International Journal of Environmental Research and Public
+        Health, 23(4), 426.
+        <a href="https://www.mdpi.com/1660-4601/23/4/426" target="_blank" rel="noopener">Link</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- DATES -->
+<section id="dates">
+  <div class="wrap">
+    <h2>Important dates</h2>
+    <p class="lead">All deadlines are Anywhere on Earth (AoE).</p>
+    <table class="dates">
+      <tr class="hot"><td>Workshop submissions due</td><td>31 Jul 2026</td></tr>
+      <tr><td>Notification of acceptance</td><td>1 Sep 2026</td></tr>
+      <tr><td>Workshop registration deadline</td><td>11 Sep 2026</td></tr>
+      <tr><td>Camera-ready papers due</td><td>14 Sep 2026</td></tr>
+      <tr><td>AIES 2026 conference</td><td>12–14 Oct 2026</td></tr>
+      <tr class="hot"><td>Workshop day</td><td>15 Oct 2026</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- SUBMIT (guidelines + form, all in one) -->
+<section id="submit">
+  <div class="wrap">
+    <h2>Submission Guidelines</h2>
+    <ul class="tight">
+      <li>Accepted papers will be included in the workshop proceedings.</li>
+      <li>Submitted papers may be at most 4 pages (including abstract, figures and tables) in the 2-column
+        style of the AAAI-2026 Author Kit, see
+        <a href="https://aaai.org/authorkit26-1/" target="_blank" rel="noopener">https://aaai.org/authorkit26-1/</a>.</li>
+      <li>Authors may use an unlimited number of pages for references.</li>
+      <li>All submissions must be made through the
+        <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">EasyChair link here</a>.
+        All submissions will be reviewed single blind.</li>
+      <li>Authors may provide, but are not required, an optional ethical considerations statement,
+        researcher positionality statement, and adverse impact statement. For an overview of positionality
+        statements, please see (<a href="https://www.youtube.com/watch?v=GpcIVzGYhVs" target="_blank" rel="noopener">https://www.youtube.com/watch?v=GpcIVzGYhVs</a>)
+        and for adverse impact statements see (<a href="https://medium.com/@alexandra.olteanu/responsible-ai-research-needs-impact-statements-too-7b7141031faf" target="_blank" rel="noopener">https://medium.com/@alexandra.olteanu/responsible-ai-research-needs-impact-statements-too-7b7141031faf</a>).
+        These statements may be given on one extra page at the end of the paper before references. This
+        page will not count toward the overall page count. These sections are not meant for the discussion
+        of methodological limitations, which should be addressed in the main paper.</li>
+      <li>Note that papers that do not follow the above formatting guidelines will be desk-rejected.</li>
+      <li>All materials are due on the paper deadline above.</li>
+    </ul>
+    <div class="note">
+      <strong>Plagiarism and the use of ChatGPT or similar LLMs:</strong>
+      <ul class="tight" style="margin-top:8px">
+        <li>Papers that include text generated from a large-scale language model (LLM) such as ChatGPT are
+          prohibited unless the produced text is presented as a part of the paper's experimental analysis.
+          Note that this policy does not prohibit authors from using LLMs for editing or polishing
+          author-written text.</li>
+        <li>AAAI/ACM AIES'2026 furthermore follows AAAI policy in that any AI system, including Generative
+          Models such as Chat-GPT, BARD, or DALL-E, do not satisfy the criteria for authorship of papers
+          published by AAAI and, as such, also cannot be used as a citable source in papers published by
+          AAAI. Authors assume full responsibility for content, including checking for plagiarism and
+          veracity of all text.</li>
+        <li>Any allegation of plagiarism, whether the result of the use of an LLM or otherwise, which comes
+          to AAAI's attention will be thoroughly investigated. If substantiated, the matter will be dealt
+          with very seriously. Possible sanctions include rejection/retraction of the work, notification to
+          all the authors' institutions or employers and any other relevant bodies, and denial of service
+          for and access to all AAAI-sponsored meetings.</li>
+      </ul>
+    </div>
+
+    <!-- submit call-to-action -->
+    <div class="easychair-box" style="margin-top:24px;text-align:center">
+      <h3 style="margin:0 0 6px;font-size:1.2rem">Ready to submit?</h3>
+      <p style="margin:0 auto 18px;max-width:54ch;color:var(--muted)">All submissions are handled on
+        EasyChair. Click below to log in (or create a free EasyChair account), enter your paper details,
+        and upload your PDF.</p>
+      <a class="btn btn-form" href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">Submit on EasyChair →</a>
+      <p class="hint" style="margin:16px 0 0">Direct link:
+        <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">https://easychair.org/conferences/?conf=cphai2026</a><br/>
+        Questions? Email <a href="mailto:z2.hubert@gmail.com">z2.hubert@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="wrap">
+    <h2>Sample schedule</h2>
+    <p class="lead">Provisional — timings depend on the number of accepted papers.</p>
+    <table class="sched">
+      <tr><td class="time">09:00–09:30</td><td>Coffee &amp; arrivals</td></tr>
+      <tr><td class="time">09:30–09:45</td><td>Introduction and welcome</td></tr>
+      <tr><td class="time">09:45–12:00</td><td>Accepted authors present</td></tr>
+      <tr><td class="time">12:00–13:00</td><td>Lunch</td></tr>
+      <tr><td class="time">13:00–14:00</td><td>Discussion panel (presenters &amp; discussants)</td></tr>
+      <tr><td class="time">14:00–16:00</td><td><em>Convergence Café</em> — collaborative cross-domain sessions</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ORGANIZERS -->
+<section id="organizers">
+  <div class="wrap">
+    <h2>Organizers</h2>
+    <p class="lead">Get in touch at <a href="mailto:z2.hubert@gmail.com">z2.hubert@gmail.com</a>.</p>
+    <div class="cards">
+      <div class="card"><h3>Alissa Valentine</h3><div class="role">University of Copenhagen</div></div>
+      <div class="card"><h3>Alice Schiavone</h3><div class="role">University of Copenhagen</div></div>
+      <div class="card"><h3>Hubert D. Zając</h3><div class="role">University of Copenhagen</div></div>
+      <div class="card"><h3>Najmeh Abiri</h3><div class="role">Malmö University</div></div>
+      <div class="card"><h3>Arezoo Sarkheyli-Hägele</h3><div class="role">Malmö University</div></div>
+      <div class="card"><h3>Azra Abtahi</h3><div class="role">Malmö University</div></div>
+      <div class="card"><h3>Natalia Avlona</h3><div class="role">Delft University of Technology</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>
+      <strong>Converging Perspectives on Health AI</strong><br/>
+      A workshop of AAAI/ACM AIES 2026 · Malmö, Sweden · 15 October 2026
+    </div>
+    <div>
+      Contact: <a href="mailto:z2.hubert@gmail.com">z2.hubert@gmail.com</a><br/>
+      <a href="#submit">Submit a paper</a> ·
+      <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">EasyChair</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
