@@ -30,7 +30,7 @@
   @media(max-width:680px){nav .links a:not(.cta){display:none}}
 
   /* hero */
-  header.hero{background:radial-gradient(1200px 400px at 20% -10%,#2a93a8 0,#0f1b2d 60%);color:#fff;padding:64px 0 56px}
+  header.hero{background:radial-gradient(1200px 400px at 20% 0%,#406192 0,#253d60 120%);color:#fff;padding:64px 0 56px}
   .kicker{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:#9fd2dd;font-weight:700}
   header.hero h1{font-size:2.1rem;line-height:1.2;margin:10px 0 8px;max-width:18ch}
   header.hero .tag{font-size:1.05rem;color:#d6e4ea;max-width:60ch;margin:0 0 22px}
@@ -135,9 +135,9 @@
 
 <header class="hero">
   <div class="wrap">
-    <img src="logo.png" alt="CPHAI 2026 logo" style="height:100px;margin:0 0 14px"/>
-    <div class="kicker">A workshop at AAAI / ACM AIES 2026 · Malmö, Sweden</div>
-    <h1>Converging Perspectives on Health AI</h1>
+    <img src="logo.png" alt="CPHAI 2026 logo" style="max-width:100%;height:auto;margin:0 0 14px"/>
+    <!-- <div class="kicker">A workshop at AAAI / ACM AIES 2026 · Malmö, Sweden</div> -->
+    <!-- <h1>Converging Perspectives on Health AI</h1> -->
     <p class="tag">Bridging Technical, Health, Social, and Ethical Research</p>
     <div class="qbox">How can we develop AI solutions that are technically robust, clinically useful,
       socially acceptable, and responsibly deployed?</div>
@@ -154,6 +154,23 @@
   </div>
 </header>
 
+
+<!-- DATES -->
+<section id="dates">
+  <div class="wrap">
+    <h2>Important dates</h2>
+    <p class="lead">All deadlines are Anywhere on Earth (AoE).</p>
+    <table class="dates">
+      <tr class="hot"><td>Workshop submissions due: </td><td>31 Jul</td></tr>
+      <tr><td>Notification of acceptance: </td><td>1 Sep</td></tr>
+      <tr><td>Workshop registration deadline: </td><td>11 Sep</td></tr>
+      <tr><td>Camera-ready papers due: </td><td>14 Sep</td></tr>
+      <tr><td>AIES 2026 conference: </td><td>12–14 Oct</td></tr>
+      <tr class="hot"><td>Workshop day: </td><td>15 Oct</td></tr>
+    </table>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="wrap">
@@ -165,22 +182,21 @@
 
 
     <p>Over the last decade, artificial intelligence (AI) systems have been increasingly deployed in the healthcare domain and have become commonplace within conversations around health. Our focus is on AI deployed in health and care settings - systems that enter diagnosis, treatment, and the work of healthcare providers, while remaining attentive to the wider conditions of health in which these systems operate. As AI systems rapidly reshape the healthcare environment, meaningful impact, not merely good performance, becomes the critical concern. This has led to a growth in research pertaining to, among others, explainable and trustworthy AI. Nevertheless, many existing AI systems still fail to deliver on their promises in healthcare workflows and other real-world use cases, often because legal, ethical, and epistemic challenges have not been integrated into their development and deployment.</p>
-    <p>Furthermore, AIES provides a groundwork for sharing research across computer and social sciences, law and policy, ethics, and philosophy. Within each of these domains, AI systems for health are developed and evaluated under different definitions of accountability, ethics, trustworthiness, safety, and alignment. The result is that each domain remains siloed from the others, with little articulation across the health AI field. Yet this articulation is essential for the development and evaluation of real-world AI systems. We count ourselves within this condition rather than outside it: as organizers drawn from computer science, social science, law, ethics, and philosophy we recognize that the meanings we attach to terms such as accountability, trust, safety, and alignment are themselves shaped by the disciplines that trained us. These are, in a precise sense, essentially contested concepts (Gallie, 1956), and the divergence among our usages is a structural feature of cross-disciplinary work rather than a failure of rigour. We do not assume that a single shared definition can or should be imposed. Instead, we offer this workshop as a trading zone (Galison, 1997) in which differing disciplinary understandings can be surfaced, held side by side, articulated. What we seek is the convergence of perspectives, understood as an achievement to be worked toward, not a premise to be assumed.</p>
-    To this end, the <strong> Converging Perspectives on Health AI Workshop </strong> aims to provide a space for community building centered on the question: How can we develop healthcare AI systems that are technically robust, clinically useful, socially acceptable, and responsibly deployed? Or, put simply, how should we be using AI in real-world clinical settings?
+    <p>Furthermore, AIES provides a groundwork for sharing research across computer and social sciences, law and policy, ethics, and philosophy. Within each of these domains, AI systems for health are developed and evaluated under different definitions of accountability, ethics, trustworthiness, safety, and alignment. The result is that each domain remains siloed from the others, with little articulation across the health AI field. Yet this articulation is essential for the development and evaluation of real-world AI systems. We count ourselves within this condition rather than outside it: as organizers drawn from computer science, social science, law, ethics, and philosophy, we recognize that the meanings we attach to terms such as accountability, trust, safety,  alignment, and compliance are themselves shaped by the disciplines that trained us. These are, in a precise sense, essentially contested concepts (Gallie, 1956), and the divergence among our usages is a structural feature of cross-disciplinary work rather than a failure of rigour. We do not assume that a single shared definition can or should be imposed. Instead, we offer this workshop as a trading zone (Galison, 1997) in which differing disciplinary understandings can be surfaced, held side by side, articulated. What we seek is the convergence of perspectives, understood as an achievement to be worked toward, not a premise to be assumed.</p>
+    <p>
+      To this end, the <strong> Converging Perspectives on Health AI Workshop </strong> aims to provide a space for community building centered on the question: How can we develop healthcare AI systems that are clinically useful, technically robust, socially acceptable, and responsibly deployed? Or, put simply, how should we be using or not using AI in real-world clinical settings?
+    </p>
 
-    <p><strong>We especially encourage submissions that:</strong></p>
+    <p>
+      
+    We especially encourage submissions that:</p>
     <ul class="tight">
       <li>are grounded in real clinical deployments, health-system settings, or concrete use cases</li>
       <li>connect normative or ethical claims to specific sociotechnical, organizational, legal, or regulatory contexts in health</li>
       <li>offer cross-national or comparative perspectives across health systems</li>
-      <li>provide reflexive accounts of ethics-in-practice, from the health and care settings to the data pipeline</li>
+      <li>provide reflexive accounts of ethics-in-practice, from the clinic to the data pipeline</li>
       <li>speak clearly and substantively across disciplinary boundaries</li>
     </ul>
-    <h3 style="margin:1.5rem 0 0.4rem;font-size:1.05rem;color:var(--accent-dk)">References</h3>
-    <p style="font-size:0.9rem">Gallie, W. B. (1955, January). Essentially contested concepts. In
-      <em>Proceedings of the Aristotelian society</em> (Vol. 56, pp. 167-198). Aristotelian Society, Wiley.</p>
-    <p style="font-size:0.9rem">Galison, P. (1997). <em>Image and logic: A material
-      culture of microphysics</em>.</p>
   </div>
 </section>
 
@@ -188,15 +204,14 @@
 <section id="topics">
   <div class="wrap">
     <h2>Themes of Interest</h2>
-    <p class="lead">The list is illustrative, not exhaustive. The groupings name shared problems, not
-      disciplines; most contributions will speak to more than one, and we particularly welcome work that does.</p>
+    <p class="lead">The list is illustrative, not exhaustive. The groupings name shared problems, not disciplines; most contributions will speak to more than one, and we particularly welcome work that does. </p>
 
     <h3 style="margin:1.5rem 0 0.4rem;font-size:1.05rem;color:var(--accent-dk)">Trust, Evidence, and Evaluation</h3>
     <ul class="tight">
-      <li>Defining, measuring, and contesting trust and trustworthiness across the fields that build and study healthcare AI</li>
+      <li>Defining, measuring, and contesting trust and trustworthiness across the fields that build and study health AI</li>
       <li>Evaluation frameworks beyond accuracy, i.e., safety, usability, robustness, and downstream clinical outcomes</li>
       <li>Communication of uncertainty, model limitations, and failure modes to healthcare providers, patients, and the public</li>
-      <li>Standards of evidence for healthcare AI, and what counts as proof of benefit across disciplines</li>
+      <li>Standards of evidence for health AI, and what counts as proof of benefit across disciplines</li>
     </ul>
 
     <h3 style="margin:1.5rem 0 0.4rem;font-size:1.05rem;color:var(--accent-dk)">Deployment, Translation, and Practice</h3>
@@ -209,9 +224,9 @@
 
     <h3 style="margin:1.5rem 0 0.4rem;font-size:1.05rem;color:var(--accent-dk)">Governance, Regulation, and Accountability</h3>
     <ul class="tight">
-      <li>Regulatory and governance frameworks for healthcare AI — statutory regimes, soft law, and technical standards (e.g., GDPR, EU AI Act, EHDS, MDR, HIPAA, FAIR), including comparative and international perspectives</li>
+      <li>Regulatory and governance frameworks for health AI,  statutory regimes, soft law, and technical standards (e.g., GDPR, EU AI Act, EHDS, MDR, HIPAA, FAIR, ISO), including comparative and international perspectives</li>
       <li>Data governance: access, sharing, and reuse of health data across development and deployment</li>
-      <li>Accountability, liability, and meaningful human oversight across the healthcare AI value chain — developers, deployers, and healthcare providers</li>
+      <li>Accountability, liability, and meaningful human oversight across the health AI value chain — developers, deployers, and healthcare providers</li>
       <li>Post-deployment harm, redress, and mechanisms for contesting automated decisions in care</li>
     </ul>
 
@@ -222,11 +237,39 @@
       <li>Participatory and community-informed approaches to building and evaluating health AI</li>
       <li>Critique, refusal, and the limits of AI in health — where it should not be deployed at all</li>
     </ul>
+
+
+      <h3 style="margin:1.5rem 0 0.4rem;font-size:1.05rem;color:var(--accent-dk)">References</h3>
+    <p style="font-size:0.9rem">Gallie, W. B. (1955, January). Essentially contested concepts. In
+      <em>Proceedings of the Aristotelian society</em> (Vol. 56, pp. 167-198). Aristotelian Society, Wiley.</p>
+    <p style="font-size:0.9rem">Galison, P. (1997). <em>Image and logic: A material
+      culture of microphysics</em>.</p>
+
+
+  </div>
+
+
+</section>
+
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="wrap">
+    <h2>Sample workshop schedule</h2>
+    <table class="sched">
+      <tr><td class="time">09:00–09:30</td><td>Arrivals &amp; Coffee</td></tr>
+      <tr><td class="time">09:30–09:45</td><td>Introduction and welcome</td></tr>
+      <tr><td class="time">09:45–12:00</td><td>Accepted authors present (time dependent on acceptances)</td></tr>
+      <tr><td class="time">12:00–13:00</td><td>Lunch</td></tr>
+      <tr><td class="time">13:00–14:00</td><td>Discussion panel (all the presenters plus the discussants)</td></tr>
+            <tr><td class="time">14:00–14:15</td><td>Coffee break</td></tr>
+      <tr><td class="time">14:15–16:00</td><td><em>Convergence Café</tr>
+    </table>
   </div>
 </section>
 
 <!-- EXAMPLE PAPERS -->
-<section id="reading">
+<!-- <section id="reading">
   <div class="wrap">
     <h2>Example papers</h2>
     <p class="lead">Below is a list of published papers identified by the workshop organizers that fit
@@ -256,23 +299,9 @@
         <a href="https://doi.org/10.14763/2025.4.2043" target="_blank" rel="noopener">Link</a></li>
       </ul>
   </div>
-</section>
+</section> -->
 
-<!-- DATES -->
-<section id="dates">
-  <div class="wrap">
-    <h2>Important dates</h2>
-    <p class="lead">All deadlines are Anywhere on Earth (AoE).</p>
-    <table class="dates">
-      <tr class="hot"><td>Workshop submissions due</td><td>31 Jul 2026</td></tr>
-      <tr><td>Notification of acceptance</td><td>1 Sep 2026</td></tr>
-      <tr><td>Workshop registration deadline</td><td>11 Sep 2026</td></tr>
-      <tr><td>Camera-ready papers due</td><td>14 Sep 2026</td></tr>
-      <tr><td>AIES 2026 conference</td><td>12–14 Oct 2026</td></tr>
-      <tr class="hot"><td>Workshop day</td><td>15 Oct 2026</td></tr>
-    </table>
-  </div>
-</section>
+
 
 <!-- SUBMIT (guidelines + form, all in one) -->
 <section id="submit">
@@ -326,41 +355,50 @@
         and upload your PDF.</p>
       <a class="btn btn-form" href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">Submit on EasyChair →</a>
       <p class="hint" style="margin:16px 0 0">Direct link:
-        <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">https://easychair.org/conferences/?conf=cphai2026</a><br/>
-        Questions? Email <a href="mailto:hdz@di.ku.dk">hdz@di.ku.dk</a></p>
+        <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">https://easychair.org/conferences/?conf=cphai2026</a></p>
     </div>
   </div>
 </section>
 
-<!-- SCHEDULE -->
-<section id="schedule">
-  <div class="wrap">
-    <h2>Sample schedule</h2>
-    <p class="lead">Provisional — timings depend on the number of accepted papers.</p>
-    <table class="sched">
-      <tr><td class="time">09:00–09:30</td><td>Coffee &amp; arrivals</td></tr>
-      <tr><td class="time">09:30–09:45</td><td>Introduction and welcome</td></tr>
-      <tr><td class="time">09:45–12:00</td><td>Accepted authors present</td></tr>
-      <tr><td class="time">12:00–13:00</td><td>Lunch</td></tr>
-      <tr><td class="time">13:00–14:00</td><td>Discussion panel (presenters &amp; discussants)</td></tr>
-      <tr><td class="time">14:00–16:00</td><td><em>Convergence Café</em> — collaborative cross-domain sessions</td></tr>
-    </table>
-  </div>
-</section>
+
 
 <!-- ORGANIZERS -->
 <section id="organizers">
   <div class="wrap">
-    <h2>Organizers</h2>
-    <p class="lead">Get in touch at <a href="mailto:hdz@di.ku.dk">hdz@di.ku.dk</a>.</p>
+
+    <h2>Workshop and Programme Chairs</h2>
     <div class="cards">
-      <div class="card"><h3>Alissa Valentine</h3><div class="role">University of Copenhagen</div></div>
-      <div class="card"><h3>Alice Schiavone</h3><div class="role">University of Copenhagen</div></div>
-      <div class="card"><h3>Hubert D. Zając</h3><div class="role">University of Copenhagen</div></div>
-      <div class="card"><h3>Najmeh Abiri</h3><div class="role">Malmö University</div></div>
-      <div class="card"><h3>Arezoo Sarkheyli-Hägele</h3><div class="role">Malmö University</div></div>
-      <div class="card"><h3>Azra Abtahi</h3><div class="role">Malmö University</div></div>
-      <div class="card"><h3>Natalia Avlona</h3><div class="role">Delft University of Technology</div></div>
+      <div class="card"><h3>Natalia-Rozalia Avlona</h3><div class="role">Delft University of Technology</div>
+      n.r.avlona@tudelft.nl
+    </div>
+
+      <div class="card"><h3>Alissa Valentine</h3><div class="role">University of Copenhagen</div>
+    alissa.valentine@di.ku.dk
+    </div>
+
+    </div>
+  </div>
+</br>
+  <div class="wrap">
+    <h2>Organizing Committee</h2>
+    <div class="cards">
+
+      <div class="card"><h3>Hubert D. Zając</h3><div class="role">University of Copenhagen</div>
+    hdz@di.ku.dk</div>
+
+      <div class="card"><h3>Najmeh Abiri</h3><div class="role">Malmö University</div>
+      najmeh.abiri@mau.se</div>
+
+      <div class="card"><h3>Alice Schiavone</h3><div class="role">University of Copenhagen</div>
+      alsc@di.ku.dk
+    </div>
+
+
+      <div class="card"><h3>Arezoo Sarkheyli-Hägele</h3><div class="role">Malmö University</div>
+    arezoo.sarkheyli-haegele@mau.se</div>
+      <div class="card"><h3>Azra Abtahi</h3><div class="role">Malmö University</div>
+    azra.abtahi-fahliani@mau.se</div>
+    </div>
     </div>
   </div>
 </section>
@@ -372,7 +410,6 @@
       A workshop of AAAI/ACM AIES 2026 · Malmö, Sweden · 15 October 2026
     </div>
     <div>
-      Contact: <a href="mailto:hdz@di.ku.dk">hdz@di.ku.dk</a><br/>
       <a href="#submit">Submit a paper</a> ·
       <a href="https://easychair.org/conferences/?conf=cphai2026" target="_blank" rel="noopener">EasyChair</a>
     </div>
